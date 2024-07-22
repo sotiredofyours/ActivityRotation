@@ -1,0 +1,11 @@
+.header-button {
+    height: 30px;
+    border: 0px;
+    background-color: var(--background-button);
+    margin-left: 35px;
+    border-radius: 5px;
+}
+
+.header-button:hover {
+    background-color: var(--main-color);
+}
