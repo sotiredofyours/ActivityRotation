@@ -4,7 +4,9 @@ const nextConfig = {
   output: 'export',
   images: {
     unoptimized: true
-  }
+  },
+  basePath: '/ActivityRotation',
+  assetPrefix: '/ActivityRotation'
 };
 
 export default nextConfig;
