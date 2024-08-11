@@ -37,7 +37,7 @@ export const Users: Array<ActivityMember> = [
     id: '4'
   },
   {
-    image: '/ActivityRotation/ActivityRotation/nietzshe.jpg',
+    image: '/ActivityRotation/nietzshe.jpg',
     name: 'Фридрих',
     surname: 'Ницше',
     description: 'Немецкий философ, композитор, культурный критик и филолог, чьи работы оказали глубокое влияние на современную философию.',
