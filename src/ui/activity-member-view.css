@@ -20,7 +20,7 @@
 }
 
 .host-view:hover {
-  background-color: var(--border-color);
+  background-color: var(--main-color);
   opacity: 0.7;
   transition: box-shadow .14s linear;
 }
