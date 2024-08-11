@@ -14,9 +14,7 @@ export function ActivityMemberView(props: IActivityMemberView) {
     <div className="host-view-container">
       <div className="host-view">
         <div className="host-title">
-          <h1>
-            {props.title}
-          </h1>
+          <h1>{props.title}</h1>
         </div>
         <div className="user-info-container">
           <div className="image">
@@ -31,7 +29,9 @@ export function ActivityMemberView(props: IActivityMemberView) {
             <div className="term">
               <h2>До 14.08.24</h2>
             </div>
-            <div className="description">{host.description}</div>
+            <div className="description">
+              <h2>{host.description}</h2>
+            </div>
           </div>
         </div>
       </div>

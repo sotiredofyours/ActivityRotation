@@ -19,7 +19,7 @@ export function ActivityView(props: IActivityViewProps) {
       <div className="member-view" key={member.id}>
         <ActivityMemberView
          host={member}
-         title={`${member.surname} ${member.name}`}
+         title={`${member.name} ${member.surname}`}
          key={member.id} />
       </div>
     );
@@ -30,7 +30,7 @@ export function ActivityView(props: IActivityViewProps) {
       <div className="activity" key={activity.id}>
         <ActivtyHeader activity={activity} />
         <ActivityMemberView
-          title={`Текущий: ${getCurrentHost(props.members).surname} ${getCurrentHost(props.members).name}`}
+          title={`Текущий: ${getCurrentHost(props.members).name} ${getCurrentHost(props.members).surname}`}
           host={getCurrentHost(props.members)} />
         <div className="members">{membersViews}</div>
       </div>
