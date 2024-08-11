@@ -1,0 +1,24 @@
+.member-view {
+  min-height: 300px;
+  max-height: 500px;
+  justify-content: space-between;
+  max-width: calc(100% / var(--colNum));
+}
+
+:root {
+  --colNum: 3;
+}
+
+.members {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.activity {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.activity-view {
+  padding: 30px 70px 0px 70px;
+}
