@@ -1,0 +1,27 @@
+.navigation-bar-container {
+  /* border: solid 5px var(--border-color); */
+  max-height: 100vh;
+  position: sticky;
+  box-sizing: border-box;
+  background-color: var(--header-color);
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+.navigation-item {
+  box-sizing: border-box;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: .5rem;
+  position: relative;
+  text-align: start;
+  border-radius: 5px;
+  display: flex;
+  box-sizing: border-box;
+  margin: 0.5rem;
+  padding: 7px;
+  background-color: whitesmoke;
+}
+
+.navigation-item:hover {
+  background-color: var(--main-color);
+}

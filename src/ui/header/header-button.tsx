@@ -7,6 +7,8 @@ interface IHeaderButtonProps {
 }
 
 export function HeaderButton(props: IHeaderButtonProps) {
+
+
   return (
     <button className="header-button" onClick={props.onClick}>
       {props.text}
