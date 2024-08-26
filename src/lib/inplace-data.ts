@@ -2,49 +2,49 @@ import { Activity, ActivityMember } from "./definitions";
 
 export const Users: Array<ActivityMember> = [
   {
-    image: '/ActivityRotation/sartr-zhan-pol.jpg',
+    image: '/sartr-zhan-pol.jpg',
     name: 'Жан-Поль',
     description: 'Французский философ-экзистенциалист, представитель атеистического экзистенциализма, писатель, драматург и эссеист, социалист. Лауреат Нобелевской премии по литературе 1964 года, от которой отказался.',
     surname: 'Сартр',
     id: '0'
   },
   {
-    image: '/ActivityRotation/camu.jpg',
+    image: '/camu.jpg',
     name: 'Альбер',
     surname: 'Камю',
     description: 'Французский континентальный философ, экзистенциалист, а также журналист, писатель, драматург, публицист и эссеист. Автор известных произведений «Посторонний», «Чума» и прочих, лауреат Нобелевской премии по литературе 1957 года.',
     id: '1'
   },
   {
-    image: '/ActivityRotation/kerkegor.jpg',
+    image: '/kerkegor.jpg',
     name: 'Сёрен',
     description: 'Датский теолог, философ, поэт и религиозный писатель, которого многие считают первым философом-экзистенциалистом. К середине XX века его мысли оказали существенное влияние на философию, теологию и западную культуру.',
     surname: 'Кьеркегор',
     id: '2'
   },
   {
-    image: '/ActivityRotation/kafka.jpg',
+    image: '/kafka.jpg',
     name: 'Франц',
     description: 'Австрийский писатель еврейского происхождения, широко признаваемый как одна из ключевых фигур литературы XX века',
     surname: 'Кафка',
     id: '3'
   },
   {
-    image: '/ActivityRotation/dostoevskiy.jpg',
+    image: '/dostoevskiy.jpg',
     name: 'Федор',
     surname: 'Достоевский',
     description: 'Русский писатель, мыслитель, философ и публицист. Член-корреспондент Петербургской академии наук с 1877 года. Классик мировой литературы, по данным ЮНЕСКО, один из самых читаемых писателей в мире.',
     id: '4'
   },
   {
-    image: '/ActivityRotation/nietzshe.jpg',
+    image: '/nietzshe.jpg',
     name: 'Фридрих',
     surname: 'Ницше',
     description: 'Немецкий философ, композитор, культурный критик и филолог, чьи работы оказали глубокое влияние на современную философию.',
     id: '5'
   },
   {
-    image: '/ActivityRotation/heidegger.jpg',
+    image: '/heidegger.jpg',
     name: 'Мартин',
     surname: 'Хайдегер',
     id: '6',
