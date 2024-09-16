@@ -1,0 +1,4 @@
+.main-content {
+  display: grid;
+  grid-template-columns: 20rem auto;
+}

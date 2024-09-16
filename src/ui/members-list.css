@@ -1,0 +1,29 @@
+.member-card {
+  box-sizing: border-box;
+  width: 100%;
+  flex-basis: 10%;
+  border-radius: 5px;
+  flex: 1;
+  animation: drop-animation 0.3s ease-in-out;
+  transition: box-shadow 0.2s ease-in-out;
+  padding: 10px 10px 0 0;
+}
+
+.drag-context {
+  border: 3px solid var(--border-color);
+  width: 50%;
+  overflow: hidden;
+  justify-content: flex-start;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+
+@keyframes drop-animation {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

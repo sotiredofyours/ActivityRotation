@@ -1,8 +1,10 @@
 .member-view {
-  min-height: 300px;
-  max-height: 500px;
-  justify-content: space-between;
-  max-width: calc(100% / var(--colNum));
+  flex-basis: calc(100% / var(--colNum));
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+  padding: 10px 10px 0 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -12,6 +14,8 @@
 .members {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
+  flex-grow: 1;
 }
 
 .activity {

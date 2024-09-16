@@ -11,7 +11,6 @@ export function ActivityMemberView(props: IActivityMemberView) {
   const host = props.host;
 
   return (
-    <div className="host-view-container">
       <div className="host-view">
         <div className="host-title">
           <h1>{props.title}</h1>
@@ -35,6 +34,5 @@ export function ActivityMemberView(props: IActivityMemberView) {
           </div>
         </div>
       </div>
-    </div>
   );
 }

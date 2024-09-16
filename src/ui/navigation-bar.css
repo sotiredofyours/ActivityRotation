@@ -1,5 +1,5 @@
 .navigation-bar-container {
-  max-height: calc(100vh - 5rem);
+  height: calc(100vh - 5rem);
   position: sticky;
   box-sizing: border-box;
   background-color: var(--header-color);

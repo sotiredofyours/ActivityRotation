@@ -5,18 +5,15 @@
   }
 }
 
-.host-view-container {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  min-height: inherit;
-}
-
 .host-view {
   border: 2px solid var(--border-color);
   width: 100%;
   border-radius: 5px;
-  min-height: inherit;
+  height: 300px;
+}
+
+.description {
+  text-overflow: ellipsis;
 }
 
 .host-view:hover {
@@ -31,7 +28,6 @@
 
 .user-info-container {
   display: flex;
-  height: auto;
   box-sizing: border-box;
 }
 
