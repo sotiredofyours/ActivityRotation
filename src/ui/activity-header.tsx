@@ -8,7 +8,7 @@ interface IActivtyHeaderProps {
 
 export function ActivtyHeader(props: IActivtyHeaderProps) {
   return (
-    <div className="activty-header" id={props.activity.id}>
+    <div className="activty-header" id={props.activity.id.toString()}>
       <h1>{props.activity.title}</h1>
       <h2>{props.activity.description}</h2>
     </div>

@@ -31,6 +31,8 @@ export async function GET(request: Request) {
           UNIQUE (activity_id, member_id)
         );
     `
+    
+    return NextResponse.json({}, { status: 200 })
   }
   catch(ex) {
     return NextResponse.json(JSON.stringify(ex), { status: 505 })
