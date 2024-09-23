@@ -1,5 +1,5 @@
 export interface ActivityMember {
-    id: string,
+    id: number,
     name: string,
     surname: string,
     description: string,
@@ -7,7 +7,7 @@ export interface ActivityMember {
 }
 
 export interface Activity {
-    id: string,
+    id: number,
     title: string,
     description: string,
     period: string

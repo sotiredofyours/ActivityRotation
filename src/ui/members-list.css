@@ -19,6 +19,17 @@
   align-items: center;
 }
 
+.main-container {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.edit-area {
+  width: 50%;
+  box-sizing: border-box;
+}
+
 @keyframes drop-animation {
   0% {
     transform: scale(1.1);

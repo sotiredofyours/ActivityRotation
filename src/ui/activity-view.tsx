@@ -3,18 +3,17 @@ import { Activity, ActivityMember } from "@/lib/definitions";
 import { ActivityMemberView } from "./acitivity-member-view";
 import { ActivtyHeader } from "./activity-header";
 import "./activity-view.css";
+import { getAllMembersInActivity } from "@/lib/data";
 
 interface IActivityViewProps {
-  activity: Array<Activity>;
-  members: Array<ActivityMember>;
+  activities: Array<Activity>;
 }
 
-export function ActivityView(props: IActivityViewProps) {
-  const getCurrentHost = React.useCallback(
-    (members: Array<ActivityMember>) => members[0],
-    []
-  );
-  const membersViews = props.members.slice(1).map((member) => {
+export async function ActivityView(props: IActivityViewProps) {
+
+  const members = await getAllMembersInActivity(props.activities[1].id);
+  const currentHost = members[0];
+  const membersViews = members.slice(1).map((member) => {
     return (
       <div className="member-view" key={member.id}>
         <ActivityMemberView
@@ -25,13 +24,13 @@ export function ActivityView(props: IActivityViewProps) {
     );
   });
 
-  const activities = props.activity.map((activity) => {
+  const activities = props.activities.map((activity) => {
     return (
       <div className="activity" key={activity.id}>
         <ActivtyHeader activity={activity} />
         <ActivityMemberView
-          title={`Текущий: ${getCurrentHost(props.members).name} ${getCurrentHost(props.members).surname}`}
-          host={getCurrentHost(props.members)} />
+          title={`Текущий: ${currentHost.name} ${currentHost.surname}`}
+          host={currentHost} />
         <div className="members">{membersViews}</div>
       </div>
     );

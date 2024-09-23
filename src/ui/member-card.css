@@ -1,0 +1,43 @@
+.title {
+  margin-left: 10px;
+  
+}
+
+.editable-card {
+  width: 100%;
+}
+
+.input-field {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 70%;
+}
+
+.input-field:focus, .input-field:active {
+  border: 2px solid var(--main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.input-field::placeholder {
+  color: #AAAAAA;
+}
+
+.input-field:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset;
+  -webkit-text-fill-color: var(--main-color);
+}
+
+.edit-button {
+  height: 30px;
+  border: 0px;
+  margin: 0 0 0 10px;
+  border-radius: 5px;
+}
+
+.edit-button:hover {
+  background-color: var(--main-color);
+}

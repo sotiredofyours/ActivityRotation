@@ -5,6 +5,7 @@ import React from "react";
 
 import './members-list.css';
 import { ActivityMemberView } from "./acitivity-member-view";
+import MemberCard from "./member-card";
 
 interface IMembersListProps {
   members: Array<ActivityMember>;
@@ -37,7 +38,6 @@ export function MembersList(props: IMembersListProps){
   }
 
   const dragStartHandler = (e: React.DragEvent<HTMLDivElement>, card: ActivityMember): void =>  {
-    console.log(card)
     setCurrentCard(card);
   }
 
@@ -56,8 +56,13 @@ export function MembersList(props: IMembersListProps){
   );
 })
   return(
-    <div className="drag-context">
-      {renderMemberList}
+    <div className="main-container">
+      <div className="drag-context">
+        {renderMemberList}
+      </div>
+      <div className="edit-area">
+        <MemberCard member={currentCard} />
+      </div>
     </div>
   )
 }

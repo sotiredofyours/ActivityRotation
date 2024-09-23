@@ -4,6 +4,7 @@
   background-color: var(--background-button);
   margin-left: 35px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .header-button:hover {
