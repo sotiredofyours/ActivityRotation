@@ -3,7 +3,7 @@ import { MembersList } from "@/ui/members-list";
 import { NavigationBar } from "@/ui/navigation-bar";
 
 import './page.css'
-import { getAllActivities, getAllMembersInActivity } from "@/lib/data";
+import { getAllActivities, getAllMembersInActivity, updateMember } from "@/lib/data";
 
 export default async function ActivitySettingsPage(){
   const activities = await getAllActivities();

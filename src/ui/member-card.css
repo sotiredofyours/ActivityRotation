@@ -1,13 +1,22 @@
 .title {
   margin-left: 10px;
-  
 }
 
 .editable-card {
   width: 100%;
+  height: 30%;
+  border-bottom: var(--border-color) solid 2px;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: flex;
+  justify-content: start;
 }
 
 .input-field {
+  text-decoration: none;
+  resize: none;
   padding: 10px;
   margin: 10px;
   font-size: 16px;
@@ -34,8 +43,9 @@
 .edit-button {
   height: 30px;
   border: 0px;
-  margin: 0 0 0 10px;
+  margin: 0 10px 0 10px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 .edit-button:hover {

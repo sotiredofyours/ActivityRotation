@@ -61,7 +61,9 @@ export function MembersList(props: IMembersListProps){
         {renderMemberList}
       </div>
       <div className="edit-area">
-        <MemberCard member={currentCard} />
+        <MemberCard
+          member={currentCard}
+         />
       </div>
     </div>
   )

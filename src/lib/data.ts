@@ -42,6 +42,20 @@ export async function createActivity(activity:Activity) {
   }
 }
 
+export async function updateMember(member: ActivityMember) {
+  const query = {
+    text: `UPDATE members SET name = \$1, description = \$2 WHERE id = \$3`,
+    values: [member.name, member.description, member.id]
+  };
+
+  try {
+    await sql.query(query);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 export async function deleteActivity(id: number) {
   const query = {
     text: `DELETE FROM activities WHERE id = \$1`,
