@@ -4,8 +4,13 @@
 
 .editable-card {
   width: 100%;
-  height: 30%;
+  height: 30vh;
   border-bottom: var(--border-color) solid 2px;
+  box-sizing: border-box;
+}
+
+.edit-area {
+  width: 50%;
   box-sizing: border-box;
 }
 
@@ -26,17 +31,18 @@
   width: 70%;
 }
 
-.input-field:focus, .input-field:active {
+.input-field:focus,
+.input-field:active {
   border: 2px solid var(--main-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .input-field::placeholder {
-  color: #AAAAAA;
+  color: #aaaaaa;
 }
 
 .input-field:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0 1000px #FFFFFF inset;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
   -webkit-text-fill-color: var(--main-color);
 }
 

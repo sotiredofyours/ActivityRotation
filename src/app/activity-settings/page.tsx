@@ -1,20 +1,8 @@
-import { Header } from "@/ui/header/header";
-import { MembersList } from "@/ui/members-list";
-import { NavigationBar } from "@/ui/navigation-bar";
+'use client'
 
-import './page.css'
-import { getAllActivities, getAllMembersInActivity, updateMember } from "@/lib/data";
+import { useRouter } from "next/navigation";
 
-export default async function ActivitySettingsPage(){
-  const activities = await getAllActivities();
-  const members = await getAllMembersInActivity(2);
-  return(
-    <>
-      <Header />
-      <div className="main-content">
-        <NavigationBar activities={activities} />
-        <MembersList members={members}></MembersList>
-      </div>
-    </>
-  );
+export default function ActivitySettingsPage() {
+  const router = useRouter();
+  router.push('/activity-settings/1');
 }

@@ -1,3 +1,5 @@
+'use server'
+
 import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 import { Activity, ActivityMember } from "./definitions";
@@ -84,10 +86,24 @@ export async function deleteMember(id: number) {
   }
 }
 
+export async function deleteMemberFromActivity(activtyId: number, memberId: number) {
+  const query = {
+    text: `DELETE FROM activity_member WHERE activity_id = \$1 AND activity_id = \$2`,
+    values: [activtyId, memberId]
+  };
+
+  try {
+    await sql.query(query);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 
 export async function addMemberToActivity(activityId: number, memberId: number) {
   const query = {
-    text: `INSERT INTO activity_members (activity_id, member_id) VALUES (\$1, \$2)`,
+    text: `INSERT INTO activity_member (activity_id, member_id) VALUES (\$1, \$2)`,
     values: [activityId, memberId]
   };
 
