@@ -5,37 +5,46 @@ import { ActivtyHeader } from "./activity-header";
 import "./activity-view.css";
 import { getAllMembersInActivity } from "@/lib/data";
 
-interface IActivityViewProps {
+interface IProps {
   activities: Array<Activity>;
 }
 
-export async function ActivityView(props: IActivityViewProps) {
-  const members = await getAllMembersInActivity(props.activities[1].id);
-  const currentHost = members[0];
-  const membersViews = members.slice(1).map((member) => {
-    return (
-      <div className="member-view" key={member.id}>
-        <ActivityMemberView
-          host={member}
-          title={`${member.name} ${member.surname}`}
-          key={member.id}
-        />
-      </div>
-    );
-  });
+export const ActivityView: React.FC<IProps> = async (props: IProps) => {
+  const renderActivityMembers = async (activityMembers: ActivityMember[]) => {
+    return activityMembers.slice(1).map((member) => {
+      return (
+        <div className="member-view" key={member.id}>
+          <ActivityMemberView
+            member={member}
+            title={`${member.name} ${member.surname}`}
+            key={member.id}
+          />
+        </div>
+      );
+    });
+  };
 
-  const activities = props.activities.map((activity) => {
+  const renderHost = (member: ActivityMember) => {
+    return (
+      <ActivityMemberView
+        title={`Текущий: ${member.name} ${member.surname}`}
+        member={member}
+      />
+    );
+  };
+
+  const activities = props.activities.map(async (activity) => {
+    const activityMembers = await getAllMembersInActivity(activity.id);
     return (
       <div className="activity" key={activity.id}>
         <ActivtyHeader activity={activity} />
-        <ActivityMemberView
-          title={`Текущий: ${currentHost.name} ${currentHost.surname}`}
-          host={currentHost}
-        />
-        <div className="members">{membersViews}</div>
+        {renderHost(activityMembers[0])}
+        <div className="members">
+          {await renderActivityMembers(activityMembers)}
+        </div>
       </div>
     );
   });
 
   return <div className="activity-view">{activities}</div>;
-}
+};

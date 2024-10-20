@@ -6,11 +6,11 @@ import React from "react";
 import "./members-list.css";
 import { ActivityMemberView } from "./acitivity-member-view";
 
-interface IMembersListProps {
+interface IProps {
   members: Array<ActivityMember>;
 }
 
-export function MembersList(props: IMembersListProps) {
+export const MembersList: React.FC<IProps> = (props: IProps) => {
   const [members, setMembers] = React.useState(props.members);
   const [currentCard, setCurrentCard] = React.useState(members[0]);
 
@@ -52,22 +52,22 @@ export function MembersList(props: IMembersListProps) {
     setCurrentCard(card);
   };
 
-  const renderMemberList = members.map((x) => {
+  const renderMemberList = members.map((member) => {
     return (
       <div
-        onDragLeave={(e) => dragLeaveHandler(e, x)}
-        onDragStart={(e) => dragStartHandler(e, x)}
+        onDragLeave={(e) => dragLeaveHandler(e, member)}
+        onDragStart={(e) => dragStartHandler(e, member)}
         onDragOver={(e) => dragOverHandler(e)}
-        onDrop={(e) => dropHandler(e, x)}
-        key={x.id}
+        onDrop={(e) => dropHandler(e, member)}
+        key={member.id}
         draggable={true}
         className="member-card"
       >
         <ActivityMemberView
-          host={x}
-          title={`${x.name} ${x.surname}`}
-          key={x.id}
-        ></ActivityMemberView>
+          member={member}
+          title={`${member.name} ${member.surname}`}
+          key={member.id}
+        />
       </div>
     );
   });
