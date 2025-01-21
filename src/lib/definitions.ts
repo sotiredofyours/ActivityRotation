@@ -10,5 +10,6 @@ export interface Activity {
     id: number,
     title: string,
     description: string,
-    period: string
+    period: number,
+    day: number
 }

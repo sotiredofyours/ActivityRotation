@@ -24,7 +24,7 @@ export function Header(props: any) {
         />
         <HeaderButton
           text="Настроить активности"
-          onClick={() => router.push("/activity-settings")}
+          onClick={() => router.push("/activity-settings/1")}
         />
       </div>
     </div>

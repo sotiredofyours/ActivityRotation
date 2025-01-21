@@ -24,6 +24,60 @@ a {
   color: inherit;
 }
 
+img {
+  border-radius: 30px;
+}
+
+.MuiInputLabel-root {
+  color: var(--main-color) !important;
+}
+
+.MuiOutlinedInput-root  {
+  border-color: var(--main-color) !important;
+}
+
+.MuiOutlinedInput-root:hover fieldset  {
+  border-color: var(--main-color) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused fieldset {
+  border-color: var(--main-color) !important;
+}
+
+.MuiInputLabel-root:hover {
+  color: var(--main-color) !important;
+}
+
+.MuiSelect-root {
+  border-color: var(--main-color) !important;
+}
+
+.MuiSelect-root:hover {
+  border-color: var(--main-color) !important;
+}
+
+.MuiSelect-root.Mui-focused {
+  border-color: var(--main-color) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--main-color) !important;
+}
+
+.MuiSelect-root.MuiSelect-open {
+  border-color: var(--main-color) !important;
+  box-shadow: 0 0 0 2px rgba(255, 87, 51, 0.3) !important;
+}
+
+.MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--main-color) !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background-color: var(--main-color) !important;
+  color: white !important;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -32,10 +86,9 @@ a {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  --header-color: #2c2c2c;
+  --header-color: rgb(55, 60, 66);
   --main-color: rgba(151, 71, 255, 1);
-  --background: #b3afaffe;
+  --background: #3A3F45;
   --background-button: #f9f9f9;
   --border-color: rgb(120, 117, 117);
 }

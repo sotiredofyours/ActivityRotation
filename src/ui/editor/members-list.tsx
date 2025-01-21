@@ -1,18 +1,20 @@
 "use client";
 
 import { ActivityMember } from "@/lib/definitions";
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 import "./members-list.css";
-import { ActivityMemberView } from "./acitivity-member-view";
+import { ActivityMemberDndView } from "./activity-member-dnd-view";
 
 interface IProps {
   members: Array<ActivityMember>;
+  updateCurrentMember: (card: ActivityMember) => void;
+  needDndView: boolean;
+  currentMember: ActivityMember;
 }
 
 export const MembersList: React.FC<IProps> = (props: IProps) => {
   const [members, setMembers] = React.useState(props.members);
-  const [currentCard, setCurrentCard] = React.useState(members[0]);
 
   const dropHandler = (
     event: React.DragEvent<HTMLDivElement>,
@@ -20,14 +22,14 @@ export const MembersList: React.FC<IProps> = (props: IProps) => {
   ) => {
     event.preventDefault();
     const newMembers = [...members];
-    const currentIndex = newMembers.indexOf(currentCard);
+    const currentIndex = newMembers.indexOf(props.currentMember);
     const targetIndex = newMembers.indexOf(targetCard);
     [newMembers[currentIndex], newMembers[targetIndex]] = [
       newMembers[targetIndex],
       newMembers[currentIndex],
     ];
     setMembers(newMembers);
-    event.currentTarget.style.boxShadow = "none";
+    event.currentTarget.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.15)";
   };
 
   const dragOverHandler = (event: React.DragEvent<HTMLDivElement>): void => {
@@ -42,14 +44,14 @@ export const MembersList: React.FC<IProps> = (props: IProps) => {
     card: ActivityMember
   ): void => {
     event.preventDefault();
-    event.currentTarget.style.boxShadow = "none";
+    event.currentTarget.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.15)";
   };
 
   const dragStartHandler = (
     e: React.DragEvent<HTMLDivElement>,
     card: ActivityMember
   ): void => {
-    setCurrentCard(card);
+    props.updateCurrentMember(card);
   };
 
   const renderMemberList = members.map((member) => {
@@ -59,17 +61,14 @@ export const MembersList: React.FC<IProps> = (props: IProps) => {
         onDragStart={(e) => dragStartHandler(e, member)}
         onDragOver={(e) => dragOverHandler(e)}
         onDrop={(e) => dropHandler(e, member)}
+        onClick={() => props.updateCurrentMember(member)}
         key={member.id}
         draggable={true}
         className="member-card"
       >
-        <ActivityMemberView
-          member={member}
-          title={`${member.name} ${member.surname}`}
-          key={member.id}
-        />
+        <ActivityMemberDndView member={member} />
       </div>
     );
   });
   return <div className="drag-context">{renderMemberList}</div>;
-}
+};

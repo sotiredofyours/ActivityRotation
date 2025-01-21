@@ -1,0 +1,23 @@
+.image {
+  padding-right: 30px;
+}
+
+.user-fullname {
+  display: block;
+  width: 100%;
+}
+
+.user-dnd-container {
+  padding-right: 30px;
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.member-card {
+  max-height: 100px;
+}
+
+.user-date {
+  display: block;
+}

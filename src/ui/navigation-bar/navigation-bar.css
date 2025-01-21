@@ -1,0 +1,49 @@
+.navigation-bar-container {
+  height: calc(100vh - 5rem);
+  position: sticky;
+  box-sizing: border-box;
+  background-color: var(--header-color);
+  top: 5rem;
+  bottom: 0;
+}
+
+.navigation-item {
+  box-sizing: border-box;
+  padding-inline-start: 1.5rem;
+  padding-inline-end: .5rem;
+  position: relative;
+  text-align: start;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  height: 4rem;
+  padding: 7px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.add-button {
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--main-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons {
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  gap: 10px;
+  transform: translateY(-50%);
+  stroke-width: 1.5px;
+}
+
+.navigation-item:hover {
+  background-color: var(--main-color);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

@@ -1,6 +1,6 @@
-import { ActivityView } from "@/ui/activity-view";
+import { ActivityView } from "@/ui/activities-view/activity-view";
 import { Header } from "@/ui/header/header";
-import { NavigationBar } from "@/ui/navigation-bar";
+import { NavigationBar } from "@/ui/navigation-bar/navigation-bar";
 import "./page.css";
 import { getAllActivities } from "@/lib/data";
 import React from "react";
@@ -11,7 +11,7 @@ export default async function Home() {
     <>
       <Header />
       <div className="main-content">
-        <NavigationBar activities={activities} linkTo="/#" />
+        <NavigationBar activities={activities} linkTo="/#" needEditButtons={false} />
         <ActivityView activities={activities} />
       </div>
     </>

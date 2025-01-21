@@ -3,7 +3,7 @@
   flex-grow: 1;
   height: 100%;
   overflow: hidden;
-  padding: 10px 10px 0 0;
+  padding: 10px 10px 10px 10px;
   box-sizing: border-box;
 }
 
@@ -11,11 +11,14 @@
   --colNum: 3;
 }
 
+.host-member {
+  padding: 10px 10px 10px 10px;
+}
+
 .members {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  flex-grow: 1;
 }
 
 .activity {
@@ -25,4 +28,5 @@
 
 .activity-view {
   padding: 30px 70px 0px 70px;
+  background-image: url('../../../public/background.png')
 }

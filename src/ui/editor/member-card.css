@@ -1,16 +1,17 @@
 .title {
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .editable-card {
   width: 100%;
-  height: 30vh;
-  border-bottom: var(--border-color) solid 2px;
+  border-bottom: var(--border-color) solid 1px;
   box-sizing: border-box;
 }
 
 .edit-area {
-  width: 50%;
+  width: 60%;
   box-sizing: border-box;
 }
 
@@ -28,13 +29,7 @@
   border: none;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 70%;
-}
-
-.input-field:focus,
-.input-field:active {
-  border: 2px solid var(--main-color);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
 }
 
 .input-field::placeholder {
@@ -49,7 +44,7 @@
 .edit-button {
   height: 30px;
   border: 0px;
-  margin: 0 10px 0 10px;
+  margin: 0 10px 10px 10px;
   border-radius: 5px;
   font-size: 16px;
 }

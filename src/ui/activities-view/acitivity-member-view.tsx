@@ -1,14 +1,23 @@
 import { ActivityMember } from "@/lib/definitions";
 import Image from "next/image";
 import "./activity-member-view.css";
-import React from "react";
+import React, { useCallback, useMemo } from "react";
+import { getNextChangeDate } from "@/lib/data";
 
 interface IProps {
   member: ActivityMember;
   title: string;
+  activityId: number;
 }
 
-export const ActivityMemberView: React.FC<IProps> = (props: IProps) => {
+/**
+ * Renders member card with general information on the main page.
+ * @param props Props.
+ * @returns Member view on the main page.
+ */
+export const ActivityMemberView: React.FC<IProps> = async (props: IProps) => {
+  const updateDate = await getNextChangeDate(props.activityId, props.member.id);
+
   return (
     <div className="host-view">
       <div className="host-title">
@@ -25,7 +34,7 @@ export const ActivityMemberView: React.FC<IProps> = (props: IProps) => {
         </div>
         <div>
           <div className="term">
-            <h2>До 14.08.24</h2>
+            До {updateDate.getDate()} / {updateDate.getMonth() + 1} / {updateDate.getFullYear()}
           </div>
           <div className="description">
             <h2>{props.member.description}</h2>
